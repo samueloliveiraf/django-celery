@@ -11,23 +11,14 @@
 <body>
 
     <div class="container">
-        {% for produto in produtos %}
-            <div class="card" style="margin-top: 30px">
-                <div class="card-header">
-                    {{ produto.nome }}
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {% if produto.ativo %}
-                            Produto Ativo
-                        {% endif %}
-                    </h5>
-                    <a href="{% url 'editar' produto.id %}" class="btn btn-primary">
-                        {{ produto.quantidade }}
-                    </a>
-                </div>
-            </div>
-        {% endfor %}
+       <form class="col s12" method="POST"> {% csrf_token %} {{ form }}
+
+            <br>
+            <button class="btn btn-primary">
+                Salvar
+            </button>
+
+        </form>
     </div>
 
 </body>
