@@ -4,18 +4,13 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['173.199.119.30']
-
+ALLOWED_HOSTS = ['140.82.43.23', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -28,22 +23,18 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
-
 THIRD_APPS = [
     'django_celery_beat',
     'django_celery_results',
     'bootstrapform'
 ]
 
-
 PROJECT_APPS = [
     'apps.produtos',
     'apps.core'
 ]
 
-
 INSTALLED_APPS = PROJECT_APPS + THIRD_APPS + DEFAULT_APPS
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
